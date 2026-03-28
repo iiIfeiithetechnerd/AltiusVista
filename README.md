@@ -1,2 +1,6 @@
 # AltiusVista
-An open-source python based graphing engine and software tool that can be used for data analysis and advanced programming. Some parts of tis program use Assembly and C.
+
+## Basic information
+
+<p>AltiusVista is an open-source graphing engine/software that is built on Python, Assembly, and C. AltiusVista has a very beautful meaning: Altius, a Latin root, means "High", and Vista means "View". This shows that the vision of this program is to not only graph graphs but to also show and present data at a powerful and detailed way. Currently, this program is still in development, however, as time progresses, it will eventually be able to handle complex graphs and information.</p>
+
