@@ -20,6 +20,8 @@ bool check_reqs(void) {
         if (system("python --version > NUL 2>&1") == 0 ||
             system("py --version > NUL 2>&1") == 0) {
             python_found = true;
+        } else {
+            python_found = false;
         }
 
     #else
