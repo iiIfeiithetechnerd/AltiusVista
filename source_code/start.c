@@ -6,7 +6,7 @@ bool init;
 
 bool check_reqs(void) {
 
-    bool python_found = false;
+    bool python_found;
 
     #if defined(__unix__) || defined(__APPLE__)
 
