@@ -6,7 +6,7 @@ bool init;
 
 bool check_reqs(void) {
 
-    bool python_found = false;
+    bool python_found;
 
     #if defined(__unix__) || defined(__APPLE__)
 
@@ -20,12 +20,16 @@ bool check_reqs(void) {
         if (system("python --version > NUL 2>&1") == 0 ||
             system("py --version > NUL 2>&1") == 0) {
             python_found = true;
-        } else {}
+        } else {
+            python_found = false;
+        }
 
     #else
 
         // unsupported platform 
-
+        fprintf(stderr, "Error: Unsupported platform. This application only supports Windows, macOS, and Linux.\n");
+        exit(EXIT_FAILURE);
+        
     #endif
 
         return python_found;
@@ -47,6 +51,7 @@ int main(void) {
         system("python ./source_code/init.py");
 
     }
+    
 
     return EXIT_SUCCESS;
 }
