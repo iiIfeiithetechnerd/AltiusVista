@@ -6,7 +6,7 @@ bool init;
 
 bool check_reqs(void) {
 
-    bool python_found;
+    bool python_found = false;
 
     #if defined(__unix__) || defined(__APPLE__)
 
@@ -20,9 +20,7 @@ bool check_reqs(void) {
         if (system("python --version > NUL 2>&1") == 0 ||
             system("py --version > NUL 2>&1") == 0) {
             python_found = true;
-        } else {
-            python_found = false;
-        }
+        } else {}
 
     #else
 
