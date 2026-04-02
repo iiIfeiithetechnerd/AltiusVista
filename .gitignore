@@ -1,0 +1,32 @@
+# === AltiusVista .gitignore ===
+
+# ---Ignore Python files---
+__pycache__/
+*py[cod]*
+*$py.class
+venv/
+.venv/
+.env/
+
+# ---Ignore C and Assembly (Build Artifacts)---
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+build/
+dist/
+
+# ---Ignore IDE and Editor Files---
+.vscode/
+.idea/
+.DS_Store
+*.log
+Thumbs.db
+
+# ---Ignore CodeSandboc files---
+*.json
+.codesandbox/
+.devcontainer/
