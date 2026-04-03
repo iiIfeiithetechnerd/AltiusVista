@@ -2,7 +2,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly as py
 import pandas as pd
-import math
+import json
 
 def gather_user_pref():
 
@@ -36,9 +36,14 @@ def gather_user_pref():
         "x-data": x_data,
         "y-data": y_data
     }
-    
-    print(f"Your preferences, titles, and data has been saved.")
 
-    return user_preferences
+    save_data = (json.dumps(user_preferences), json.dumps(graph_data))
+
+    f = open("save_data.json", "w")
+    json.dump(save_data, f)
+    f.close()
+
+    print(f"Your preferences, titles, and data has been saved.")
+    return user_preferences, graph_data
 
 gather_user_pref()
