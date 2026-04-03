@@ -12,7 +12,7 @@ def gather_user_pref():
     preferred_dem_type = input("Input the demension type that you would like to use (e.g. 2D, 2.5D, 3D...): ")
     preferred_color = input("Input the color that you would like to use (RGBA, Hex): ")
 
-    print("Graph data")
+    print("Graph titles")
 
     main_title = input("Input your title for this graph: ")
     x_axi_label = input("Input your x-axis label: ")
