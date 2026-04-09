@@ -1,0 +1,24 @@
+# Update the package database first
+pacman -Syu
+
+# Install pre-compiled data science libraries
+pacman -S mingw-w64-ucrt-x86_64-python-matplotlib \
+          mingw-w64-ucrt-x86_64-python-pandas \
+          mingw-w64-ucrt-x86_64-python-seaborn
+
+
+# Create the 'Super Duper' Virtual Environment
+python -m venv venv
+
+# Install remaining light libraries (like Plotly)
+./venv/bin/python -m pip install plotly
+
+
+# Compile the C program (ensure you're in UCRT64)
+gcc windows_start.c -o windows_start.exe
+
+# Run the controller
+./windows_start.exe
+
+python -m venv venv --system-site-packages
+
