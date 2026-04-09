@@ -27,6 +27,6 @@ dist/
 Thumbs.db
 
 # ---Ignore CodeSandbox files---
-*.json
+*save_data.json # For a specific JSON, not just all JSON anymore
 .codesandbox/
 .devcontainer/
