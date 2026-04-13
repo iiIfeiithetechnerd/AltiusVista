@@ -65,6 +65,7 @@ If you are on Windows, make sure that you have MSYS2 UCRT64 installed. If you do
 
 #### For Linux users:
 <em>Please note that for Linux, the install_libraries.c source code file is still currently being worked on.</em>
+
 ##### For Ubuntu:
 ##### For source_code/windows_start.c
 1. Compile the C program: <br>
@@ -79,6 +80,7 @@ If you are on Windows, make sure that you have MSYS2 UCRT64 installed. If you do
 2. Run the compiled binary: <br>
 ```./linux_start.out```
 ## Development Philosophy
+
 AltiusVista is built with an emphasis on:
 * Hardened Logic: Minimizing redundant operations within loops to ensure maximum efficiency.
 * Surgical Precision: Targeting specific data points for visualization without unnecessary overhead.
