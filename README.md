@@ -1,6 +1,8 @@
 # AltiusVista
 
-AltiusVista is a high-resolution data visualization and system analysis tool designed to bridge the gap between low-level system operations and high-level data interpretation. The project implements a core logic engine in C to handle system-level tasks and file management, while utilizing Python for complex data processing and graphical rendering.
+AltiusVista is an open-source, high-resolution data visualization and system analysis tool designed to bridge the gap between low-level system operations and high-level data interpretation. The project implements a core logic engine in C to handle system-level tasks and file management, while utilizing Python for complex data processing and graphical rendering.
+<br>
+* This project is currently in development, so expect things such as bugs and errors. This project will always be in development.
 
 ## Project Anatomy
 
@@ -37,10 +39,16 @@ To maintain system integrity and ensure the Sovereign operation of the software,
    `cd AltiusVista`
 2. Compile the C logic engine: <br>
    `gcc main.c -o AltiusVista`
-#### For Windows Users
-If you are on Windows, make sure that you have MSYS2 UCRT installed. If you don't, download it here: https://www.msys2.org/
+#### For Windows Users 
+If you are on Windows, make sure that you have MSYS2 UCRT64 installed. If you don't, download it here: https://www.msys2.org/
 <br>
 ##### For source_code/windows_start.c
+1. Compile the C program (Ensure you're in UCRT64): <br>
+`gcc source_code/windows_start.c -o windows_start.exe`
+2. Run the compiled binary: <br>
+`./windows_start.exe`
+
+##### For source_code/install_libraries_windows.c
 1. Update the package database: <br>
 `sudo pacman -Syu`
 2. Install the pre-compiled data science libraries: <br>
@@ -51,19 +59,32 @@ If you are on Windows, make sure that you have MSYS2 UCRT installed. If you don'
 `python -m venv venv`
 4. Install Plotly: <br>
 `./venv/bin/python -m pip install plotly`
-5. Compile the C program (ensure you're in UCRT64) <br>
-`gcc source_code/windows_start.c -o windows_start.exe`
+5. Compile the C program (ensure you're in UCRT64): <br>
+`gcc source_code/install_libraries_windows.c -o install_libraries_windows.exe`
 6. Run the compiled binary: <br>
-`./windows_start.exe`
-##### For source_code/install_libraries_windows.c
+`./install_libraries_windows.exe`
+* Running windows_start.exe checks if you have python installed. If you do, install_libraries_windows.exe will run, and from there, init.py will run.
 
+#### For Linux users:
+<em>Please note that for Linux, the install_libraries.c source code file is still currently being worked on.</em>
+##### For Ubuntu:
+##### For source_code/windows_start.c
+1. Compile the C program: <br>
+`gcc source_code/linux_start.c -o linux_start.out`
+2. Run the compiled binary: <br>
+`./linux_start.out`
+   
+##### For Arch Linxu:
+##### For source_code/windows_start.c
+1. Compile the C program: <br>
+`gcc source_code/linux_start.c -o linux_start.out`
+2. Run the compiled binary: <br>
+`./linux_start.out`
 ## Development Philosophy
-
 AltiusVista is built with an emphasis on:
 * Hardened Logic: Minimizing redundant operations within loops to ensure maximum efficiency.
 * Surgical Precision: Targeting specific data points for visualization without unnecessary overhead.
 * Analytical Stamina: Built to handle large datasets through optimized search and sort algorithms.
-
+* The name itself means "Higher View", as Altius comes from Latin, meaning "High" or "higher", and Vista meaning "vision" or "view".
 ## License
-
-This project is maintained by iiIfeiithetechnerd. All rights reserved. Logic and structure are subject to continuous surgical optimization.
+This project is maintained by iiIfeiithetechnerd with an MIT License.. All rights reserved. Logic and structure are subject to continuous surgical optimization. For more information, view the License: https://github.com/iiIfeiithetechnerd/AltiusVista/blob/main/LICENSE
