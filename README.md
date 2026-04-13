@@ -35,34 +35,32 @@ To maintain system integrity and ensure the Sovereign operation of the software,
 
 ### Build Instructions
 1. Clone the repository: <br>
-   `git clone https://github.com/iiIfeiithetechnerd/AltiusVista.git`
-   `cd AltiusVista`
+   ```git clone https://github.com/iiIfeiithetechnerd/AltiusVista.git```
+   ```cd AltiusVista```
 2. Compile the C logic engine: <br>
-   `gcc main.c -o AltiusVista`
+   ```gcc main.c -o AltiusVista```
 #### For Windows Users 
 If you are on Windows, make sure that you have MSYS2 UCRT64 installed. If you don't, download it here: https://www.msys2.org/
 <br>
 ##### For source_code/windows_start.c
 1. Compile the C program (Ensure you're in UCRT64): <br>
-`gcc source_code/windows_start.c -o windows_start.exe`
+```gcc source_code/windows_start.c -o windows_start.exe```
 2. Run the compiled binary: <br>
-`./windows_start.exe`
+```./windows_start.exe```
 
 ##### For source_code/install_libraries_windows.c
 1. Update the package database: <br>
-`sudo pacman -Syu`
+```sudo pacman -Syu```
 2. Install the pre-compiled data science libraries: <br>
-`pacman -S mingw-w64-ucrt-x86_64-python-matplotlib \
-          mingw-w64-ucrt-x86_64-python-pandas \
-          mingw-w64-ucrt-x86_64-python-seaborn`
+```pacman -S mingw-w64-ucrt-x86_64-python-matplotlib mingw-w64-ucrt-x86_64-python-pandas \mingw-w64-ucrt-x86_64-python-seaborn```
 3. Create a virtual environment: <br>
-`python -m venv venv`
+```python -m venv venv```
 4. Install Plotly: <br>
-`./venv/bin/python -m pip install plotly`
+```./venv/bin/python -m pip install plotly```
 5. Compile the C program (ensure you're in UCRT64): <br>
-`gcc source_code/install_libraries_windows.c -o install_libraries_windows.exe`
+```gcc source_code/install_libraries_windows.c -o install_libraries_windows.exe```
 6. Run the compiled binary: <br>
-`./install_libraries_windows.exe`
+```./install_libraries_windows.exe```
 * Running windows_start.exe checks if you have python installed. If you do, install_libraries_windows.exe will run, and from there, init.py will run.
 
 #### For Linux users:
@@ -70,16 +68,16 @@ If you are on Windows, make sure that you have MSYS2 UCRT64 installed. If you do
 ##### For Ubuntu:
 ##### For source_code/windows_start.c
 1. Compile the C program: <br>
-`gcc source_code/linux_start.c -o linux_start.out`
+```gcc source_code/linux_start.c -o linux_start.out```
 2. Run the compiled binary: <br>
-`./linux_start.out`
+```./linux_start.out```
    
 ##### For Arch Linxu:
 ##### For source_code/windows_start.c
 1. Compile the C program: <br>
-`gcc source_code/linux_start.c -o linux_start.out`
+```gcc source_code/linux_start.c -o linux_start.out```
 2. Run the compiled binary: <br>
-`./linux_start.out`
+```./linux_start.out```
 ## Development Philosophy
 AltiusVista is built with an emphasis on:
 * Hardened Logic: Minimizing redundant operations within loops to ensure maximum efficiency.
