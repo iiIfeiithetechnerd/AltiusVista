@@ -25,7 +25,7 @@ dist/
 .DS_Store
 *.log
 Thumbs.db
-.vs/
+.vs/git 
 
 # ---Ignore CodeSandbox files---
 *save_data.json # For a specific JSON, not just all JSON anymore
