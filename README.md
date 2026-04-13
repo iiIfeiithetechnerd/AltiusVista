@@ -9,7 +9,7 @@ The repository is structured to separate system logic from data visualization to
 * Logic Engine (C): Handles the fundamental operations, file system checks, and ensures the environment is prepared for data processing.
 * Data Analysis (Python): Processes the data extracted by the logic engine to generate high-resolution graphs and insights.
 * Cross-Platform Integration: Designed to operate within a Linux environment (optimized for Arch Linux) while maintaining portability for other Unix-like systems.
-
+* While this program is optimized for Linux, specifically Arch Linux, it is also currently being optimized to run on Windows.
 ## Technical Specifications
 
 ### Logic Core (main.c)
@@ -29,16 +29,33 @@ The Python component is the analytical layer of the Vista.
 To maintain system integrity and ensure the Sovereign operation of the software, the following must be installed:
 * GCC (GNU Compiler Collection)
 * Python 3.10 or higher
-* Required Python modules: matplotlib, numpy
+* Required Python modules: matplotlib, seaborn, plotly, pandas
 
 ### Build Instructions
-1. Clone the repository:
-   git clone https://github.com/iiIfeiithetechnerd/AltiusVista.git
-   cd AltiusVista
-2. Compile the C logic engine:
-   gcc main.c -o AltiusVista
-3. Execute the binary:
-   ./AltiusVista
+1. Clone the repository: <br>
+   `git clone https://github.com/iiIfeiithetechnerd/AltiusVista.git`
+   `cd AltiusVista`
+2. Compile the C logic engine: <br>
+   `gcc main.c -o AltiusVista`
+#### For Windows Users
+If you are on Windows, make sure that you have MSYS2 UCRT installed. If you don't, download it here: https://www.msys2.org/
+<br>
+##### For source_code/windows_start.c
+1. Update the package database: <br>
+`sudo pacman -Syu`
+2. Install the pre-compiled data science libraries: <br>
+`pacman -S mingw-w64-ucrt-x86_64-python-matplotlib \
+          mingw-w64-ucrt-x86_64-python-pandas \
+          mingw-w64-ucrt-x86_64-python-seaborn`
+3. Create a virtual environment: <br>
+`python -m venv venv`
+4. Install Plotly: <br>
+`./venv/bin/python -m pip install plotly`
+5. Compile the C program (ensure you're in UCRT64) <br>
+`gcc source_code/windows_start.c -o windows_start.exe`
+6. Run the compiled binary: <br>
+`./windows_start.exe`
+##### For source_code/install_libraries_windows.c
 
 ## Development Philosophy
 
