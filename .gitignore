@@ -18,6 +18,7 @@ venv/
 *.out
 build/
 dist/
+main_engine_s/
 
 # ---Ignore IDE and Editor Files---
 .vscode/
