@@ -26,6 +26,8 @@ dist/
 *.log
 Thumbs.db
 .vs/git 
+*instructions.txt
+*documentation.txt
 
 # ---Ignore CodeSandbox files---
 *save_data.json # For a specific JSON, not just all JSON anymore
