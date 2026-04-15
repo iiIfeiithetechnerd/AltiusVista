@@ -38,9 +38,6 @@ To maintain system integrity and ensure the Sovereign operation of the software,
 
 ```
 git clone https://github.com/iiIfeiithetechnerd/AltiusVista.git
-```
-   
-```
 cd AltiusVista
 ```
    
