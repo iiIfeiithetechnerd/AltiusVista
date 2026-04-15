@@ -49,7 +49,7 @@ gcc main.c -o AltiusVista
    
 #### For Windows Users 
 > [!TIP]
-> If you are on Windows, make sure that you have MSYS2 UCRT64 installed. If you don't, download it here: https://www.msys2.org/
+> If you are on Windows, make sure that you have MSYS2 UCRT64 installed. If you don't, download it here: https://www.msys2.org/ (press ctrl +  and click the link on Windows/Linux or cmd + and click the link in MacOS)
 
 ##### For source_code/windows_start.c
 1. Compile the C program (Ensure you're in UCRT64): 
