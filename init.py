@@ -1,9 +1,25 @@
-import seaborn as sns
-import matplotlib.pyplot as plt
-import plotly as py
-import pandas as pd
 import json
+import subprocess
+import sys
 
+def check_data_collected():
+    with open("save_data.json", "r") as save_data:
+        
+        data = json.load(save_data)
+        return data
+
+    if (data["Data-gathered"] == "True"):
+        
+        get_answer = input("Would you like to create a new dataset? Y/n ")
+        
+        if (get_answer == "y" | get_answer == "Y"):
+            
+            gather_user_pref()
+            
+        elif (get_answer == "n" | get_answer =="N"):
+            
+            sys.exit()
+        
 def gather_user_pref():
 
     print("AltiusVista setup")
@@ -22,6 +38,7 @@ def gather_user_pref():
 
     x_data = input("Input the data for your x-axis: ")
     y_data = input("Input the data for your y-axis: ")
+    data_gathered = True
 
     user_preferences = {
         "plot_type": preferred_plot_type,
@@ -34,7 +51,8 @@ def gather_user_pref():
 
     graph_data = {
         "x-data": x_data,
-        "y-data": y_data
+        "y-data": y_data,
+        "Data-gathered": data_gathered
     }
 
     save_data = (json.dumps(user_preferences), json.dumps(graph_data))
@@ -46,4 +64,6 @@ def gather_user_pref():
     print(f"Your preferences, titles, and data has been saved.")
     return user_preferences, graph_data
 
+check_data_collected()
 gather_user_pref()
+subprocess.run([sys.executable, "main_engine/data_parse.py"])
