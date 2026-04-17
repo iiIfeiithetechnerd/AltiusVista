@@ -1,4 +1,42 @@
 import json
+import subprocess
+import sys
+import os
+
+def check_data_collected():
+
+    if os.path.isfile("save_data.json"):
+
+        try:
+
+            with open("save_data.json", "r") as save_data:
+
+                data = json.load(save_data)
+
+                if isinstance(data, dict) and data.get("Data-gathered") == True:
+
+                    get_answer = input("Would you like to use the existing dataset? y/n: ")
+
+                    if get_answer.lower() == "y":
+
+                        return data
+                    
+                    elif get_answer.lower() == "n":
+
+                        return None
+                    
+                    else:
+
+                        print("Invalid input. Assuming no.")
+                        return None
+                    
+        except json.JSONDecodeError:
+
+            print("Error reading saved data. Starting fresh.")
+            return None
+        
+    return None
+
 
 def gather_user_pref():
 
@@ -47,8 +85,43 @@ def gather_user_pref():
 
     print("Graph data")
 
-    x_data = input("Input the data for your x-axis: ")
-    y_data = input("Input the data for your y-axis: ")
+    while True:
+
+        x_data_str = input("Input the data for your x-axis (comma-separated numbers): ").strip()
+
+        try:
+            x_data = [float(x.strip()) for x in x_data_str.split(',') if x.strip()]
+
+            if x_data:
+                break
+            else:
+
+                print("No valid numbers entered. Please try again.")
+
+        except ValueError:
+
+            print("Invalid input. Please enter comma-separated numbers.")
+
+    while True:
+
+        y_data_str = input("Input the data for your y-axis (comma-separated numbers): ").strip()
+
+        try:
+
+            y_data = [float(y.strip()) for y in y_data_str.split(',') if y.strip()]
+            if y_data:
+
+                break
+
+            else:
+
+                print("No valid numbers entered. Please try again.")
+
+        except ValueError:
+
+            print("Invalid input. Please enter comma-separated numbers.")
+
+    data_gathered = True
 
     user_preferences = {
 
@@ -59,16 +132,26 @@ def gather_user_pref():
         "x-label": x_axis_label,
         "y-label": y_axis_label,
         "x-data": x_data,
-        "y-data": y_data
+        "y-data": y_data,
+        "Data-gathered": data_gathered
+
     }
 
-    save_data = (json.dumps(user_preferences), json.dumps(graph_data))
+    try:
 
-    f = open("save_data.json", "w")
-    json.dump(save_data, f)
-    f.close()
+        with open("save_data.json", "w") as f:
+            json.dump(user_preferences, f, indent=4)
+        print("Your preferences, titles, and data have been saved.")
 
-    print(f"Your preferences, titles, and data has been saved.")
-    return user_preferences, graph_data
+    except IOError as e:
 
-gather_user_pref()
+        print(f"Error saving data: {e}")
+
+    return user_preferences
+
+data = check_data_collected()
+if data is None:
+
+    data = gather_user_pref()
+
+subprocess.run([sys.executable, "main_engine/data_parse.py"])
