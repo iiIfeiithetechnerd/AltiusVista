@@ -29,7 +29,7 @@ int main() {
     if (exitCode == 0) {
 
         printf("Libraries installed successfully.\n");
-        system("venv\\bin\\python ./source_code/init.py");
+        system("venv\\bin\\python ./init.py");
 
     } else {
 
