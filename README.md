@@ -31,6 +31,8 @@ The Python component is the analytical layer of the Vista.
 To maintain system integrity and ensure the Sovereign operation of the software, the following must be installed:
 * GCC (GNU Compiler Collection)
 * Python 3.10 or higher
+> [!TIP]
+> If you are on Linux, you should automatically have Python installed. If on Windows, makw sure you add Python to the PATH as you are installing it.
 * Required Python modules: matplotlib, seaborn, plotly, pandas
 
 ### Build Instructions
