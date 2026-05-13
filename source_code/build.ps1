@@ -13,3 +13,11 @@ if (-not (Get-Command "make" -ErrorAction SilentlyContinue)) {
 
 Write-Host "[+] Make is installed. Compiling required files..." -ForegroundColor Green
 make windows
+
+if ($LASTEXITCODE -eq 0){
+    Write-Host "[+] Compilation successful! Running the application..." -ForegroundColor Green
+    & ".\run.ps1"
+} else {
+    Write-Error "[-] Compilation failed. Please check the output for errors." -ForegroundColor Red
+    Exit 1
+}
