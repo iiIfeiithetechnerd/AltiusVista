@@ -14,16 +14,11 @@ The repository is structured to separate system logic from data visualization to
 * While this program is optimized for Linux, specifically Arch Linux, it is also currently being optimized to run on Windows.
 ## Technical Specifications
 
-### Logic Core (main.c)
-The C component serves as the primary controller. It includes:
-* Standard I/O and System Libraries: Utilizes <stdio.h>, <stdlib.h>, and <string.h> for memory and string manipulation.
-* Environment Verification: Includes logic to detect the presence of required Python dependencies to prevent runtime corruption.
-* Execution Control: Manages the lifecycle of the data visualization process.
-
 ### Data Visualization (main.py)
-The Python component is the analytical layer of the Vista.
+The Python component is the analytical layer of AltiusVista.
 * Data Ingestion: Reads processed system data or external datasets.
 * Graphical Rendering: Produces visual representations of complex data structures.
+> This also uses C++ alongside Python.
 
 ## Installation and Deployment
 
