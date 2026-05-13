@@ -43,30 +43,17 @@ git clone https://github.com/iiIfeiithetechnerd/AltiusVista.git
 cd AltiusVista
 ```
    
-3. Compile the C logic engine: 
+2. Run the installation powershell script: 
 
 ```
-gcc main.c -o AltiusVista
+PowerShell -ExecutionPolicy Bypass -File .\build.ps1
 ```
    
 #### For Windows Users 
 > [!TIP]
 > If you are on Windows, make sure that you have MSYS2 UCRT64 installed. If you don't, download it here: https://www.msys2.org/ (press ctrl +  and click the link on Windows/Linux or cmd + and click the link in MacOS)
 
-##### For source_code/windows_start.c
-1. Compile the C program (Ensure you're in UCRT64): 
-
-```
-gcc source_code/windows_start.c -o windows_start.exe
-```
-
-2. Run the compiled binary: 
-
-```
-./windows_start.exe
-```
-
-##### For source_code/install_libraries_windows.c
+##### For source_code/win_install_libraries.c
 1. Update the package database: 
 
 ```
@@ -91,22 +78,12 @@ python -m venv venv
 ./venv/bin/python -m pip install plotly
 ```
 
-5. Compile the C program (ensure you're in UCRT64): 
 
-```
-gcc source_code/install_libraries_windows.c -o install_libraries_windows.exe
-```
-
-6. Run the compiled binary: 
-
-```
-./install_libraries_windows.exe
-```
-
-* Running windows_start.exe checks if you have python installed. If you do, install_libraries_windows.exe will run, and from there, init.py will run.
+* Running win_start.exe checks if you have python installed. If you do, win_install_libraries.exe will run, and from there, init.py will run.
 
 #### For Linux users:
-<em>Please note that for Linux, the install_libraries.c source code file is still currently being worked on.</em>
+> [!WARNING]
+> Unlike Windows, there is currently no automation script for Linux.
 
 ##### For Ubuntu:
 ##### For source_code/windows_start.c
