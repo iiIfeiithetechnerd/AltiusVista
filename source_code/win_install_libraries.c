@@ -3,7 +3,7 @@
 
 int main() {
 
-    char command[] = "cmd.exe /c venv\\bin\\pip install -r requirements.txt";
+    char command[] = "C:\\msys64\\usr\\bin\\bash.exe -c \"cd /a/AltiusVista/source_code && venv/bin/pip install -r requirements.txt\"";
 
     STARTUPINFO si;
     PROCESS_INFORMATION pi;
@@ -29,7 +29,7 @@ int main() {
     if (exitCode == 0) {
 
         printf("Libraries installed successfully.\n");
-        system("venv\\bin\\python ./init.py");
+        system("C:\\msys64\\usr\\bin\\bash.exe -c \"cd /a/AltiusVista/source_code && source venv/bin/activate && python init.py\"");
 
     } else {
 

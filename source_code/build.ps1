@@ -1,3 +1,4 @@
+Set-Location $PSScriptRoot
 if (-not (Get-Command "make" -ErrorAction SilentlyContinue)) {
     Write-Host "[-] Make is not installed. Installing Make via winget..." 
 
