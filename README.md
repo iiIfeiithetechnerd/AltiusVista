@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/iiIfeiithetechnerd/AltiusVista-Web/refs/heads/main/assets/WEB%20(1).png">
+
 # AltiusVista
 
 AltiusVista is an open-source, high-resolution data visualization and system analysis tool designed to bridge the gap between low-level system operations and high-level data interpretation. The project implements a core logic engine in C to handle system-level tasks and file management, while utilizing Python for complex data processing and graphical rendering. C++ is also used to enhance the 3d graphs produced by this program.
