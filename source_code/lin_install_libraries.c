@@ -20,9 +20,11 @@ void install_libraries() {
     
 }
 
+
 int main() {
 
     install_libraries();
+    system("./venv/bin/python source_code/init.py");
     return 0;
 
 }
