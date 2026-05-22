@@ -81,7 +81,7 @@ python -m venv venv
 #### For Linux users:
 
 ##### For Ubuntu/Any other Linux Distrobution that uses apt:
-##### For source_code/windows_start.c
+##### For build.sh:
 1. Make build.sh executeable:
 ```
 chmod +x ./build.sh
@@ -97,7 +97,7 @@ build.sh
 
    
 ##### For Arch Linxu:
-##### For source_code/windows_start.c
+##### For build_arch.sh:
 1. Make build_arch.sh executeable:
 ```
 chmod +x ./build_arch.sh
