@@ -16,7 +16,7 @@ linux: $(LIN_EXES)
 	$(WIN_CC) $(CFLAGS) -static $< -o $@
 
 %: %.c
-	$(LIN_CC) -shared $< -o $@
+	$(LIN_CC) $(CFLAGS)$< -o $@
 
 clean:
 	rm -f $(WIN_EXES) $(LIN_EXES)
