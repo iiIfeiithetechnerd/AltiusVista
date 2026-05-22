@@ -5,7 +5,7 @@ WIN_SRCS = $(wildcard win_*.c)
 LIN_SRCS = $(wildcard lin_*.c)
 
 WIN_EXES = $(WIN_SRCS:.c=.exe)
-LIN_EXES = $(LIN_SRCS:.c=.so)
+LIN_EXES = $(LIN_SRCS:.c=)
 
 all: windows linux
 
@@ -15,7 +15,7 @@ linux: $(LIN_EXES)
 %.exe: %.c
 	$(WIN_CC) $(CFLAGS) -static $< -o $@
 
-%.so: %.c
+%: %.c
 	$(LIN_CC) -shared $< -o $@
 
 clean:

@@ -50,7 +50,7 @@ int main(void) {
     } else {
 
         printf("All requirements are met. Installing needed libraries...\n");
-        system("lin_install_libraries.so");
+        system("lin_install_libraries");
         
     }
 

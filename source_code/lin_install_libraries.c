@@ -9,19 +9,19 @@ void install_libraries() {
 
     #ifdef __linux__
 
-        system("pip install -r requirements.txt");
+    system("venv/bin/pip install -r requirements.txt");
 
     #else
 
-        system("venv\\Scripts\\pip install -r requirements.txt");
+    system("venv\\Scripts\\pip install -r requirements.txt");
 
     #endif
-
+    
 }
 
 int main() {
 
     install_libraries();
     return 0;
-    
+
 }
