@@ -79,36 +79,38 @@ python -m venv venv
 * Running win_start.exe checks if you have python installed. If you do, win_install_libraries.exe will run, and from there, init.py will run.
 
 #### For Linux users:
-> [!WARNING]
-> Unlike Windows, there is currently no automation script for Linux.
 
-##### For Ubuntu:
+##### For Ubuntu/Any other Linux Distrobution that uses apt:
 ##### For source_code/windows_start.c
-1. Compile the C program: 
+1. Make build.sh executeable:
+```
+chmod +x ./build.sh
+```
 
+2. Run the file:
 ```
-gcc source_code/linux_start.c -o linux_start.out
+build.sh
 ```
 
-2. Run the compiled binary: 
+> [!NOTE]
+> build.sh will handle everything, so there is no need to do this manually.
 
-```
-./linux_start.out
-```
    
 ##### For Arch Linxu:
 ##### For source_code/windows_start.c
-1. Compile the C program: 
+1. Make build_arch.sh executeable:
+```
+chmod +x ./build_arch.sh
+```
 
+2. Run the file:
 ```
-gcc source_code/linux_start.c -o linux_start.out
+build_arch.sh
 ```
 
-2. Run the compiled binary: 
+> [!NOTE]
+> build.sh will handle everything, so there is no need to do this manually.
 
-```
-./linux_start.out
-```
 
 ## Development Philosophy
 
