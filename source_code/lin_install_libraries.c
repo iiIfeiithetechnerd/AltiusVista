@@ -10,7 +10,7 @@ void install_libraries() {
     #ifdef __linux__
 
     system("python3 -m venv ./venv");
-    system("./venv/bin/python -m pip install -r ./requirements.txt");
+    system("./venv/bin/python -m pip install -r requirements.txt");
 
     #else
 
