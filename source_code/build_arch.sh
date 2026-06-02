@@ -2,7 +2,7 @@ cd "$(dirname "$0")"
 
 if ! command -v make &> /dev/null; then
 
-    echo "[-] Make is not installed. Installing Make via apt..."
+    echo "[-] Make is not installed. Installing Make via pacman..."
     sudo pacman -Syu --needed make
 
     if ! command -v make &> /dev/null; then
