@@ -25,7 +25,7 @@ int main() {
 
     printf("Installing required libraries...\n");
     
-    char command[MAX_PATH] = "cmd.exe /k venv\\Scripts\\python.exe -m pip install -r requirements.txt";
+    char command[MAX_PATH] = "cmd.exe /k venv\\bin\\python.exe -m pip install -r requirements.txt";
 
 
     ZeroMemory(&si, sizeof(si));
